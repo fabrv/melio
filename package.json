@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node target/js/myexample.js",
+    "start": "node target/js/index.js",
+    "build:live": "lein cljsbuild auto",
+    "serve": "nodemon --watch ./target/js ./target/js/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "fabrv",
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
   }
 }
