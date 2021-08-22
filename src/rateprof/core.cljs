@@ -1,15 +1,26 @@
-(ns rateprof.core)
+(ns rateprof.core
+  (:require
+   [rateprof.routes.index :as index]))
 
 ;; NodeJs libraries
 (def express (js/require "express"))
+(def logger (js/require "morgan"))
+(def exphbs (js/require "express-handlebars"))
+
 (def app (express))
 
-(defn handler [_ res]
-  (.send res "Hello World Test 14"))
+(def hbs-config {:extname ".hbs"
+                 :defaultLayout "layout"
+                 :helpers {}})
+(def hbs
+  (.create exphbs (clj->js hbs-config)))
 
 (defn server [port success]
   (doto app
-    (.get "/" handler)
+    (.use (logger "dev"))
+    (.engine ".hbs" (. hbs -engine))
+    (.set "view engine" ".hbs")
+    (.use "/" index/router)    
     (.listen port success)))
 
 (defn -main [& _]
