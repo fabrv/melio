@@ -1,0 +1,87 @@
+:root {
+    --color-secondary: #F5F7FA;
+    --color-accent: #713E5A;
+    --color-accent-light: rgba(113, 62, 90, 0.25);
+    --color-primary: #FFF;
+    --border-radius: 16px;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+.content {
+    padding: 15px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 800px) {
+    .content {
+        width: 100%;
+    }
+}
+
+.form-control, .input-group-text {
+    background-color: var(--color-secondary);
+    border: none;
+    padding: .5rem 0.75rem;
+}
+
+.form-control:focus, .input-group-text:focus {
+    box-shadow: 0 0 0 .25rem var(--color-accent-light);
+}
+
+.input-group input {
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.input-group .input-group-text {
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    color: var(--bs-dark);
+}
+
+.card {
+    border-radius: var(--border-radius);
+    transition: .2s ease-in-out;
+    cursor: pointer;
+    user-select: none;
+}
+
+.card:hover, .card:focus {
+    box-shadow: 0 0 0 .25rem var(--color-accent-light);
+}
+
+.card:active {
+    box-shadow: 0 0 0 .25rem var(--color-accent);
+}
+
+.card-img-top {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+}
+
+.flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 15px;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+p {
+    font-weight: 300;
+}
+
+.card-title {
+    font-weight: 300;
+}
+
+.rating-text {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-accent);
+}

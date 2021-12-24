@@ -1,6 +1,7 @@
 (ns rateprof.core
   (:require
-   [rateprof.routes.index :as index]))
+   [rateprof.routes.index :as index]
+   [rateprof.utils.format :as format]))
 
 ;; NodeJs libraries
 (def express (js/require "express"))
@@ -11,16 +12,22 @@
 
 (def hbs-config {:extname ".hbs"
                  :defaultLayout "layout"
-                 :helpers {}})
+                 :helpers {
+                           :ratingToStar format/ratingToStar
+                           :add (fn [a b] (+ a b))
+                 }})
 (def hbs
   (.create exphbs (clj->js hbs-config)))
+
+(defn static [root] (.static express root))
 
 (defn server [port success]
   (doto app
     (.use (logger "dev"))
     (.engine ".hbs" (. hbs -engine))
+    (.use (static "public"))
     (.set "view engine" ".hbs")
-    (.use "/" index/router)    
+    (.use "/" index/router)
     (.listen port success)))
 
 (defn -main [& _]
