@@ -8,3 +8,18 @@ const uniCardKeyDown = (event, universityId) => {
     openUniversity(universityId);
   }
 }
+
+const toggleClass = (elementId, className) => {
+  const element = document.getElementById(elementId);
+  element.classList.toggle(className);
+}
+
+const removeClass = (elementId, className) => {
+  const element = document.getElementById(elementId);
+  element.classList.remove(className);
+}
+
+const addClass = (elementId, className) => {
+  const element = document.getElementById(elementId);
+  element.classList.add(className);
+}

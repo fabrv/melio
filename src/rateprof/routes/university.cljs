@@ -6,7 +6,7 @@
 
 ;; Mock collection of professors, with fields: id, name, and rating
 (def professors
-  (js/Array
+  (array
     #js{
         :id "1"
         :name "Dr. Ramirez"
@@ -30,6 +30,31 @@
     #js{
         :id "5"
         :name "Dr. Perez"
+        :rating "0.5"
+    }
+    #js{
+        :id "6"
+        :name "Dr. Sanchez"
+        :rating "2.5"
+    }
+    #js{
+        :id "7"
+        :name "Dr. Rodriguez"
+        :rating "3.5"
+    }
+    #js{
+        :id "8"
+        :name "Dr. Zuluaga"
+        :rating "3.5"
+    }
+    #js{
+        :id "9"
+        :name "Dr. Morales"
+        :rating "1.5"
+    }
+    #js{
+        :id "10"
+        :name "Dr. Correa"
         :rating "0.5"
     }))
 

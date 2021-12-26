@@ -1,5 +1,5 @@
 <div class="uni-bg" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Panor%C3%A1mica_entrada_Universidad_Francisco_Marroqu%C3%ADn.jpg/1920px-Panor%C3%A1mica_entrada_Universidad_Francisco_Marroqu%C3%ADn.jpg');">  
-  <a class="btn-action d-md-none" href="#">
+  <a class="btn-action d-md-none" href="#profesores" onclick="removeClass('select-message', 'hidden');">
     <span>
       <i class="bi bi-plus-lg"></i>
     </span>
@@ -11,12 +11,12 @@
   </p>
   <p class="uni-text">130 calificaciones</p>
   <p class="uni-text">"Nuestra misión es la enseñanza y difusión de los principios éticos, jurídicos y económicos de una sociedad de personas libres y responsables."</p>
-  <a class="btn btn-outline-light d-none d-md-inline" role="button" href="#">
+  <a onclick="removeClass('select-message', 'hidden');" class="btn btn-outline-light d-none d-md-inline" role="button" href="#profesores">
     Calificar
   </a>
 </div>
 
-<div class="p-3">
+<div class="p-3" id="profesores">
   <div class="input-group mb-3">
     <span class="input-group-text">
         <i class="bi bi-search"></i>
@@ -24,18 +24,7 @@
     <input type="text" class="form-control" placeholder="Buscar catedratico" aria-label="Buscar catedratico">    
   </div>
 
-  <!--<div class="d-grid gap-2">
-    <a class="btn btn-light">Calificar catedratico</a>
-  </div>-->
-
-  <div class="list-group list-group-flush ">
-    {{#each professors}}
-    <a href="#" class="list-group-item p-3 border-0 d-flex list-group-item-action justify-content-between">
-      {{this.name}}
-      <span class="list-star">
-        {{{ratingToStars this.rating}}}
-      </span>
-    </a>
-    {{/each}}
-  </div>
+  <div id="select-message" class="transition-1s hidden">Seleccionar un catedratico para calificar</div>
+  
+  {{> professorsList}}
 </div>

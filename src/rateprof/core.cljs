@@ -15,7 +15,8 @@
                  :defaultLayout "layout"
                  :helpers {
                            :ratingToStars format/ratingToStar
-                           :add (fn [a b] (+ a b))}})
+                           :add (fn [a b] (+ a b))
+                           :random (fn [] (rand-int 100))}})
                  
 (def hbs
   (.create exphbs (clj->js hbs-config)))
