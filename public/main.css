@@ -1,10 +1,23 @@
 :root {
     --color-secondary: #F5F7FA;
     --bs-primary: #713E5A;
+    --bs-secondary: #51B1A6;
     --color-accent: #713E5A;
     --color-accent-light: rgba(113, 62, 90, 0.25);
-    --color-primary: #FFF;
+    --color-primary: rgb(211, 208, 208);
     --border-radius: 16px;
+}
+
+.bg-primary {
+    background-color: var(--bs-primary) !important;
+}
+
+.bg-secondary {
+    background-color: var(--bs-secondary) !important;
+}
+
+.color-primary {
+    color: var(--bs-primary) !important;
 }
 
 body {
@@ -82,7 +95,37 @@ p {
     color: var(--color-accent);
 }
 
-.uni-bg {
+.rate {
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 1px;
+    margin: 20px;
+}
+
+.rate .stars {
+    letter-spacing: -7px;
+    font-size: 1.5rem;
+}
+
+.bi-star-fill, .bi-star {
+    margin: 0 3px;
+}
+
+.select-star {
+    margin: 0 0;
+    padding: 0 9px;
+    cursor: pointer;
+}
+
+.select-star.bi-star {
+    color: #C4C4C4;
+}
+
+.select-star.bi-star-fill {
+    color: var(--color-accent);
+}
+
+.heading-bg {
     background-repeat: no-repeat;
     background-position: 50% 90%;
     min-height: 30vh;
@@ -97,24 +140,20 @@ p {
     z-index: 1;
 }
 
-.uni-title {
+.heading-title {
     font-size: 48px;
     font-weight: 700;
 }
 
-.uni-text {
+.heading-text {
     margin: .5em;
-}
-
-.bi-star-fill {
-    margin: 0 3px;
 }
 
 @media screen and (max-width: 800px) {
     .content {
         width: 100%;
     }
-    .uni-title {
+    .heading-title {
         font-size: 1.75rem;
     }
 }

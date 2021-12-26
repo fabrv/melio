@@ -1,4 +1,5 @@
-(ns rateprof.routes.university)
+(ns rateprof.routes.university 
+  (:require [rateprof.routes.professor :as professor]))
 
 (def express (js/require "express"))
 
@@ -65,3 +66,8 @@
    (.render res "university" #js{
                                  :name (.. req -params -name)
                                  :professors professors})))
+
+(.use
+ router
+ "/:name/:profId"
+ professor/router)

@@ -1,0 +1,36 @@
+<div class="heading-bg bg-secondary bg-gradient">
+  <div class="heading-title">
+    Maria Gonzales Perez
+  </div>
+  <p class="heading-text">
+    {{{ratingToStars 3.6}}}
+    3.6/5
+  </p>
+  <p class="heading-text">
+    5 calificaciones
+  </p>
+
+  <span class="badge rounded-pill bg-light text-dark">Economía</span>
+  <span class="badge rounded-pill bg-light text-dark">Matemáticas</span>
+  <span class="badge rounded-pill bg-light text-dark">Álgebra</span>
+  <span style="cursor: pointer; user-select: none;" class="badge rounded-pill bg-light text-dark">+</span>
+</div>
+
+<div class="rate">
+  <b class="ms-3">Tocar para calificar:</b> &nbsp;
+  <br class="d-md-none"/>
+  <span class="stars">
+    <i id='star0' class="select-star bi bi-star"></i>
+    <i id='star1' class="select-star bi bi-star"></i>
+    <i id='star2' class="select-star bi bi-star"></i>
+    <i id='star3' class="select-star bi bi-star"></i>
+    <i id='star4' class="select-star bi bi-star"></i>
+  </span>
+</div>
+
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">{{> rating}}</li>
+  <li class="list-group-item">{{> rating}}</li>
+  <li class="list-group-item">{{> rating}}</li>
+  <li class="list-group-item">{{> rating}}</li>
+</ul>
