@@ -20,12 +20,48 @@
   <b class="ms-3">Tocar para calificar:</b> &nbsp;
   <br class="d-md-none"/>
   <span class="stars">
-    <i id='star0' class="select-star bi bi-star"></i>
-    <i id='star1' class="select-star bi bi-star"></i>
-    <i id='star2' class="select-star bi bi-star"></i>
-    <i id='star3' class="select-star bi bi-star"></i>
-    <i id='star4' class="select-star bi bi-star"></i>
+    <i id='star0' class="select-star bi bi-star" data-bs-toggle="modal" data-bs-target="#rateModal" data-rating="1"></i>
+    <i id='star1' class="select-star bi bi-star" data-bs-toggle="modal" data-bs-target="#rateModal" data-rating="2"></i>
+    <i id='star2' class="select-star bi bi-star" data-bs-toggle="modal" data-bs-target="#rateModal" data-rating="3"></i>
+    <i id='star3' class="select-star bi bi-star" data-bs-toggle="modal" data-bs-target="#rateModal" data-rating="4"></i>
+    <i id='star4' class="select-star bi bi-star" data-bs-toggle="modal" data-bs-target="#rateModal" data-rating="5"></i>
   </span>
+</div>
+
+<div class="modal fade" id="rateModal" tabindex="-1" aria-labelledby="rateModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rateModalLabel">Calificar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="rate">
+          <span class="stars">
+            <i id='modal-star0' class="select-star bi bi-star"></i>
+            <i id='modal-star1' class="select-star bi bi-star"></i>
+            <i id='modal-star2' class="select-star bi bi-star"></i>
+            <i id='modal-star3' class="select-star bi bi-star"></i>
+            <i id='modal-star4' class="select-star bi bi-star"></i>
+          </span>
+        </div>
+        <form>
+          <div class="mb-3">
+            <label for="modalRating-name" class="col-form-label">Titulo:</label>
+            <input type="text" name="title" class="form-control" id="title-name">
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Retroalimentación:</label>
+            <textarea name="message" class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Enviar calificación</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <ul class="list-group list-group-flush">
@@ -34,3 +70,4 @@
   <li class="list-group-item">{{> rating}}</li>
   <li class="list-group-item">{{> rating}}</li>
 </ul>
+<button class="btn btn-light m-1">Cargar más</button>
