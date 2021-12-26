@@ -1,5 +1,6 @@
 :root {
     --color-secondary: #F5F7FA;
+    --bs-primary: #713E5A;
     --color-accent: #713E5A;
     --color-accent-light: rgba(113, 62, 90, 0.25);
     --color-primary: #FFF;
@@ -12,14 +13,9 @@ body {
 
 .content {
     padding: 15px;
+    padding-top: 0;
     width: 800px;
     margin: 0 auto;
-}
-
-@media screen and (max-width: 800px) {
-    .content {
-        width: 100%;
-    }
 }
 
 .form-control, .input-group-text {
@@ -53,7 +49,7 @@ body {
 }
 
 .card:active {
-    box-shadow: 0 0 0 .25rem var(--color-accent);
+    transform: scale(.98);
 }
 
 .card-img-top {
@@ -84,4 +80,75 @@ p {
     font-size: 1rem;
     font-weight: 700;
     color: var(--color-accent);
+}
+
+.uni-bg {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 162%;
+    min-height: 30vh;
+    border-bottom-right-radius: 36px;
+    border-bottom-left-radius: 36px;
+    padding: 50px;
+    color: white;
+    position: relative;
+}
+
+.uni-body {
+    z-index: 1;
+}
+
+.uni-title {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.uni-text {
+    margin: .5em;
+}
+
+.bi-star-fill {
+    margin: 0 3px;
+}
+
+@media screen and (max-width: 800px) {
+    .content {
+        width: 100%;
+    }
+    .uni-title {
+        font-size: 1.75rem;
+    }
+}
+
+.list-star {
+    color: var(--color-accent)
+}
+
+.btn {
+    border-radius: var(--border-radius);
+}
+
+.btn-action {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position: absolute;
+    background-color: var(--color-primary);
+    right: 50px;
+    top: 50px;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    color: black;
+}
+
+.btn-action:hover {
+    opacity: .8;
+    color: black;
+}
+
+.btn-action:active {
+    transform: scale(.98);
+    opacity: .7;
+    color: black;
 }

@@ -1,6 +1,7 @@
 (ns rateprof.core
   (:require
    [rateprof.routes.index :as index]
+   [rateprof.routes.university :as university]
    [rateprof.utils.format :as format]))
 
 ;; NodeJs libraries
@@ -13,9 +14,9 @@
 (def hbs-config {:extname ".hbs"
                  :defaultLayout "layout"
                  :helpers {
-                           :ratingToStar format/ratingToStar
-                           :add (fn [a b] (+ a b))
-                 }})
+                           :ratingToStars format/ratingToStar
+                           :add (fn [a b] (+ a b))}})
+                 
 (def hbs
   (.create exphbs (clj->js hbs-config)))
 
@@ -27,6 +28,7 @@
     (.engine ".hbs" (. hbs -engine))
     (.use (static "public"))
     (.set "view engine" ".hbs")
+    (.use "/universidades" university/router)
     (.use "/" index/router)
     (.listen port success)))
 

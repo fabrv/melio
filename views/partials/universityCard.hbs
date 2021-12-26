@@ -1,9 +1,10 @@
-<div tabindex="{{add @index 2}}" class="card" style="width: 13rem;">
+<div id={{id}} onclick="openUniversity('{{id}}')" onkeydown="uniCardKeyDown(event, '{{id}}')" tabindex="{{add @index 2}}" class="card" style="width: 13rem;">
   <img src="{{image}}" class="card-img-top" alt="{{name}}">
   <div class="card-body">
     <h5 class="card-title">{{name}}</h5>
     <p class="card-text">
       <span class="rating-text">{{rating}}/5</span>
     </p>
+    <a href="/universidades/{{id}}" class="btn btn-light">Ver profesores</a>
   </div>
 </div>
