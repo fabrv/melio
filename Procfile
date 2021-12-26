@@ -1,1 +1,1 @@
-web: node target/js/myexample.js
+web: node target/js/index.js
